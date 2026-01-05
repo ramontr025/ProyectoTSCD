@@ -1,0 +1,11 @@
+% Preamble para definiciones y teoremas
+\usepackage{amsthm}
+\usepackage[most]{tcolorbox}
+\newtheorem{definition}{Definición}[section]
+\newtheorem{theorem}{Teorema}[section]
+\newtcolorbox{defbox}[1][]{
+  colback=gray!5,
+  colframe=black!50,
+  fonttitle=\bfseries,
+  title=#1
+}
