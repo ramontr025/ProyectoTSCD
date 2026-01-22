@@ -67,7 +67,7 @@ Las razones por las que las GNNs pueden beneficiar el aprendizaje con datos tabu
 
 -   **Capacidad inductiva:** Las GNNs exhiben la habilidad y el poder inductivo de generalizar el mecanismo de transmisión de mensajes a nodos nunca vistos e incluso a nuevas redes. Cuando instancias y carácteristicas son representadas como nodos y sus interacciones como aristas en una red, aprender las representaciones con GNNs permite trabajar con características no vistas directamente en el set de prueba, producir embeddings para nuevas instancias y generalizar sobre tareas nunca aprendidas en el entrenamiento.
 
-![Pipeline general de la metodología GNN4TBL.](images/Captura%20de%20pantalla%202025-12-23%20150331.png){#imagen-1}
+![Pipeline general de la metodología GNN4TBL.[@li2024graph]](images/Captura%20de%20pantalla%202025-12-23%20150331.png){#imagen-1}
 
 # Pipeline para GNN4TBL
 
@@ -83,7 +83,7 @@ Debemos elegir que elementos usaremos como nodos.
 
 1.  **Grafos de instancias:** Dan lugar a grafos homogéneos creados para modelar las relaciones globales entre las muestras de datos, por lo que su construcción depende de todas las carácteristicas. De hecho, a este tipo de grafos les resulta díficil capturar relaciones localmente en términos de subconjuntos de características.
 
-    Además, el uso de este tipo de grafos suele restringirse a cuando el número de características es pequeño, por ejemplo en SUBLIME [@sublime], LUNAR \[44\], SLAPS \[33\] e IDGL con menos de 65 variables. Esto se debe a que es mucho más simple e interpretable a la hora de relacionar los nodos, y para evitar el ruido, pues conjuntos de datos con muchas carácteristicas y no todas significativas o beneficiosas puede llevar a obstaculizar el rendimiento de la red.
+    Además, el uso de este tipo de grafos suele restringirse a cuando el número de características es pequeño, por ejemplo en SUBLIME [@sublime], LUNAR [@goodge2022lunar], SLAPS [@fatemi2021slaps] e IDGL con menos de 65 variables. Esto se debe a que es mucho más simple e interpretable a la hora de relacionar los nodos, y para evitar el ruido, pues conjuntos de datos con muchas carácteristicas y no todas significativas o beneficiosas puede llevar a obstaculizar el rendimiento de la red.
 
 2.  **Grafos de características:** Consiste en modelar las interacciones entre características en un grafo homogéneo, en el cual los nodos son las caracteristicas y las aristas sus correlaciones. Uno de los objetivos de este tipo de redes es aprender las interacciones de alto orden entre carácteristicas e instancias que antes comentabamos. Es bueno resaltar que aunque las relaciones entre características se aprenden de manera automática, en ciertos campos como la medicina se requiere tener un conocimiento de dominio significativo para contrastar las dependencias de algunas características
 
@@ -113,7 +113,7 @@ Seleccionados el tipo de nodos, podemos aplicar varias metodologías para crear 
 
     Este método suele ser aplicado, por ejemplo, en grafos de instancias, donde dos nodos serán conectados si comparten una cierta categoría o si la similaridad definida entre ellos supera un cierto umbral.
 
-    Además, las reglas pueden estar basadas en conocimiento, correlaciones u objetivos específicos. Los criterios más conocidos son \*\*k-vecinos más cercanos\*\* (unir los nodos más cercanos según una determinada similaridad), unir los nodos cuya similaridad supere un cierto **umbral**, unir **todos con todos** y unir los que **compartan valores** de algún atributo.
+    Además, las reglas pueden estar basadas en conocimiento, correlaciones u objetivos específicos. Los criterios más conocidos son **k-vecinos más cercanos** (unir los nodos más cercanos según una determinada similaridad), unir los nodos cuya similaridad supere un cierto **umbral**, unir **todos con todos** y unir los que **compartan valores** de algún atributo.
 
 -   **Métodos de aprendizaje:** Se entrenan modelos que buscan determinar automáticamente la estructura óptima de un grafo capturando información y relaciones complejas de manera eficiente. Se pueden categorizar en cuatro grupos:
 
@@ -123,7 +123,7 @@ Seleccionados el tipo de nodos, podemos aplicar varias metodologías para crear 
 
     -   **Enfoque directo:** Se considera la matriz de adyaciencia del grafo como un conjunto de parametros que deberemos estimar. A diferencia de los otros métodos no depende de las propiedades de los nodos para definir las aristas pero es costoso computacionalmente.
 
-![Resumen de los criterios de formulación de la red.](images/Captura%20de%20pantalla%202025-12-23%20151538.png){#fig-mi-imagen}
+![Resumen de los criterios de formulación de la red. [@li2024graph]](images/Captura%20de%20pantalla%202025-12-23%20151538.png){#fig-mi-imagen}
 
 # Aprendizaje de la representación
 
